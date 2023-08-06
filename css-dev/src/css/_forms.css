@@ -1,0 +1,102 @@
+div.main {
+    display:flex;
+    justify-content: center;
+}
+
+section.input-panel {
+    & h1 {
+        font-size: var(--h3-size);
+    }
+
+    & fieldset {
+        background-color: var(--gray-1);
+        border: none;
+        border-radius: var(--small-radius);
+        padding: 1rem; 
+        width: 500px;
+
+        & label > span {
+            display: block;
+            margin-bottom: .4rem;
+            font-size: var(--text-size-input);
+        } 
+
+        & input {
+            &[type=text], &[type=email] {
+                padding: .4rem;
+                color: var(--text-color-input);
+                width: 96%; 
+                border-radius: var(--small-radius);
+                border-width: 0;
+                
+                &:focus {
+                    outline: none;
+                    background-color: var(--teal-1);
+                    color: var(--text-dark-color);
+                }
+                
+                &::placeholder {
+                    color: var(--gray-5);
+                }
+                
+                &[required] {
+                    border: 1px solid var(--red-3);
+                }
+                
+                &:is([required]):not(:placeholder-shown) {
+                    border: 1px solid var(--teal-3);
+                    background-color: var(--teal-1);
+                }                
+            }
+        }
+        
+        & div.error-message {
+            display: flex;
+            align-items: center;
+            padding: calc(var(--size-1) / 2) ;
+
+            & i {
+                color: var(--error-background-color);
+                margin-right: var(--size-1);;
+            }
+
+            & span {
+                color: var(--error-background-color);
+            }
+        }
+ 
+        & i.icon {
+            font-size: 60%;   
+            color: red;
+        }   
+
+        & div.form-field:not(:last-child) {
+            margin-bottom: var(--input-element-spacing);
+        }
+
+        div.buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        button.btn {
+            border: none;
+            padding: .7rem;
+            border: none;
+            transition: background-color .7s ease-in-out;
+            border-radius: var(--small-radius);
+        }
+
+        button.btn-ok {
+            background-color: var(--color-ok);            
+            color: var(--gray-3);
+        }
+        
+        button.btn-ok:hover {
+            /* Make --color-ok 20% darker. */
+            background-color: color-mix(in srgb, var(--color-ok), black 20%);
+            box-shadow: var(--shadow-3);
+            cursor: pointer;
+        }
+    }
+}

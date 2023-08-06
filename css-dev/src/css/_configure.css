@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --page-background-color: var(--gray-4);
+    --text-dark-color: var(--stone-9);
+    --text-color-input: var(--stone-7);
+
+    --input-element-spacing: var(--size-3);
+
+    --space-after-h1: var(--size-4);
+    --paragraph-spacing: var(--size-2);
+
+    --paragraph-text-size: 1.125rem;
+
+    --text-size-input: var(--size-4);
+    --text-size-small: var(--size-3);
+
+    --color-ok: var(--teal-7);
+
+    --small-radius: 5px;
+
+    --error-background-color: var(--red-8);
+    --error-foreground-color: var(--gray-0);
+
+}
+

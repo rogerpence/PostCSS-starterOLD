@@ -1,0 +1,1 @@
+curl https://unpkg.com/open-props@1.5.10/open-props.min.css -o open-props.css
