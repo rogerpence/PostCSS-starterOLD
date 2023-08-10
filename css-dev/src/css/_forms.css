@@ -100,3 +100,10 @@ section.input-panel {
         }
     }
 }
+
+
+@container sidebar (min-width: 700px) {
+    .card {
+      font-size: 2em;
+    }
+  }
