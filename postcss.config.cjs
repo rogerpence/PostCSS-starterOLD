@@ -1,18 +1,29 @@
+const cssnano = require("cssnano");
 const openProps = require("open-props");
-
-// console.log(openProps);
+const postcssCustomMedia = require("postcss-custom-media");
+const postcssGlobalData = require("@csstools/postcss-global-data");
+const postcssImport = require("postcss-import");
+const postcssJitProps = require("postcss-jit-props");
+const postcssPresetEnv = require("postcss-preset-env");
 
 module.exports = {
-  map: { inline: true },
   plugins: [
-    require("postcss-import"),
-    require("postcss-nesting"),
-    require("postcss-custom-media"),
-    require("postcss-media-minmax"),
-    require("postcss-jit-props")([openProps]),
-    // require("postcss-preset-env")({
-    //   "custom-media-queries": true,
-    // }),
-    ...(process.env.NODE_ENV === "production" ? [require("cssnano")] : []),
+    postcssImport(),
+    postcssGlobalData({
+      files: ["node_modules://open-props/media.min.css"],
+    }),
+    postcssCustomMedia({
+      preserve: false,
+    }),
+    postcssJitProps(openProps),
+    postcssPresetEnv({
+      features: {
+        "nesting-rules": true,
+        "custom-media-queries": false,
+      },
+    }),
+
+    // ,
+    // cssnano(),
   ],
 };

@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 devDependencies:
+  '@csstools/postcss-global-data':
+    specifier: ^2.0.1
+    version: 2.0.1(postcss@8.4.28)
   cssnano:
     specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.28)
@@ -156,6 +159,15 @@ packages:
     dependencies:
       postcss: 8.4.28
       postcss-value-parser: 4.2.0
+    dev: true
+
+  /@csstools/postcss-global-data@2.0.1(postcss@8.4.28):
+    resolution: {integrity: sha512-MTaupJCsDS9BDgo+Lvb5G1/MkqnKN65I14nr2Hu0QqHoqJEIOpn6CBGrs7jXAjksGG0OUDQY0zlhjM3q7AI54A==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      postcss: 8.4.28
     dev: true
 
   /@csstools/postcss-gradients-interpolation-method@4.0.1(postcss@8.4.28):
