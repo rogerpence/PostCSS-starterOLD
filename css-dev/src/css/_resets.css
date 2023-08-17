@@ -4,7 +4,6 @@ body {
     font-family: var(--font-sans);
 }
 
-
 :root {
     --h1-size: var(--size-8);
     --h2-size: var(--size-7);
