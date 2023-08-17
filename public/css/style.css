@@ -8,7 +8,7 @@
     --teal-7: #0ca678;
     --red-8: #e03131;
     --gray-0: #f8f9fa;
-    --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+    --font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
     --size-8: 3rem;
     --size-7: 2rem;
     --size-6: 1.75rem;
@@ -64,9 +64,7 @@
 
 
 body {
-    background-color: var(--gray-4);
     background-color: var(--page-background-color);
-    color: var(--stone-9);
     color: var(--text-dark-color);
     font-family: var(--font-sans);
 }
@@ -82,82 +80,62 @@ body {
 
 
 :where(h1) {
-    font-size: var(--size-8);
     font-size: var(--h1-size);
-    margin-bottom: var(--size-4);
     margin-bottom: var(--space-after-h1);
 }
 
 
 :where(h2) {
-    font-size: var(--size-7);
     font-size: var(--h2-size);
-    margin-top: calc(var(--size-2) + .8rem);
     margin-top: calc(var(--paragraph-spacing) + .8rem);
-    margin-bottom: var(--size-2);
     margin-bottom: var(--paragraph-spacing);
 }
 
 
 :where(h3) {
-    font-size: var(--size-6);
     font-size: var(--h3-size);
-    margin-top: calc(var(--size-2) + .8rem);
     margin-top: calc(var(--paragraph-spacing) + .8rem);
-    margin-bottom: var(--size-2);
     margin-bottom: var(--paragraph-spacing);
 }
 
 
 :where(h4) {
-    font-size: var(--size-5);
     font-size: var(--h4-size);
-    margin-top: calc(var(--size-2) + .8rem);
     margin-top: calc(var(--paragraph-spacing) + .8rem);
-    margin-bottom: var(--size-2);
     margin-bottom: var(--paragraph-spacing);
 }
 
 
 :where(h5) {
-    font-size: var(--size-4);
     font-size: var(--h5-size);
-    margin-top: calc(var(--size-2) + .8rem);
     margin-top: calc(var(--paragraph-spacing) + .8rem);
-    margin-bottom: var(--size-2);
     margin-bottom: var(--paragraph-spacing);
 }
 
 
 p {
-    font-size: 1.125rem;
     font-size: var(--paragraph-text-size);
 }
 
 
 .small-text {
-    font-size: calc(1.125rem - .15rem);
     font-size: calc(var(--paragraph-text-size) - .15rem);
 }
 
 
 p {
-    margin-bottom: var(--size-2);
     margin-bottom: var(--paragraph-spacing);    
 }
 
 
 input {
-    font-size: var(--size-4);
     font-size: var(--text-size-input);
     color: inherit;
 }
 
 
 :where(a) {
-    color: var(--orange-7);
     color: var(--accent-color);
-    text-decoration-color: var(--orange-7);
     text-decoration-color: var(--accent-color);
     text-decoration-thickness: 1px;
     text-underline-position: under;
@@ -183,7 +161,6 @@ div.main {
 
 
 section.input-panel h1 {
-        font-size: var(--size-6);
         font-size: var(--h3-size);
     }
 
@@ -191,7 +168,6 @@ section.input-panel h1 {
 section.input-panel fieldset {
         background-color: var(--gray-1); 
         border: none;
-        border-radius: 5px;
         border-radius: var(--small-radius);
         padding: 1rem; 
         width: 500px;
@@ -201,7 +177,6 @@ section.input-panel fieldset {
 section.input-panel fieldset label > span {
             display: block;
             margin-bottom: .4rem;
-            font-size: var(--size-4);
             font-size: var(--text-size-input);
         }
 
@@ -210,7 +185,6 @@ section.input-panel fieldset input[type=text], section.input-panel fieldset inpu
                 background-color: var(--gray-1); 
 
                 padding: .4rem;
-                color: var(--stone-7);
                 color: var(--text-color-input);
                 width: 96%; 
                 /*border-radius: var(--small-radius); */ 
@@ -224,13 +198,7 @@ section.input-panel fieldset input[type=text]:focus, section.input-panel fieldse
                     outline: none;
                     /* background-color: var(--teal-1); */
                     background-color: white;
-                    color: var(--stone-9);
                     color: var(--text-dark-color);
-                }
-
-
-section.input-panel fieldset input[type=text]::-moz-placeholder, section.input-panel fieldset input[type=email]::-moz-placeholder {
-                    color: var(--gray-5);
                 }
 
 
@@ -244,25 +212,7 @@ section.input-panel fieldset input[type=text][required], section.input-panel fie
                 }
 
 
-section.input-panel fieldset input[type=text][required]:not(:-moz-placeholder-shown) {
-                    /* border: 1px solid var(--teal-3);
-                    background-color: var(--teal-1); */
-                }
-
-
-section.input-panel fieldset input[type=text][required]:not(:placeholder-shown) {
-                    /* border: 1px solid var(--teal-3);
-                    background-color: var(--teal-1); */
-                }
-
-
-section.input-panel fieldset input[type=email][required]:not(:-moz-placeholder-shown) {
-                    /* border: 1px solid var(--teal-3);
-                    background-color: var(--teal-1); */
-                }
-
-
-section.input-panel fieldset input[type=email][required]:not(:placeholder-shown) {
+section.input-panel fieldset input[type=text]:is([required]):not(:placeholder-shown), section.input-panel fieldset input[type=email]:is([required]):not(:placeholder-shown) {
                     /* border: 1px solid var(--teal-3);
                     background-color: var(--teal-1); */
                 }
@@ -276,14 +226,12 @@ section.input-panel fieldset div.error-message {
 
 
 section.input-panel fieldset div.error-message i {
-                color: var(--red-8);
                 color: var(--error-background-color);
                 margin-right: var(--size-1);;
             }
 
 
 section.input-panel fieldset div.error-message span {
-                color: var(--red-8);
                 color: var(--error-background-color);
             }
 
@@ -295,7 +243,6 @@ section.input-panel fieldset i.icon {
 
 
 section.input-panel fieldset div.form-field:not(:last-child) {
-            margin-bottom: var(--size-3);
             margin-bottom: var(--input-element-spacing);
         }
 
@@ -311,13 +258,11 @@ section.input-panel fieldset button.btn {
             padding: .7rem;
             border: none;
             transition: background-color .7s ease-in-out;
-            border-radius: 5px;
             border-radius: var(--small-radius);
         }
 
 
 section.input-panel fieldset button.btn-ok {
-            background-color: var(--teal-7);
             background-color: var(--color-ok);            
             color: var(--gray-3);
         }
@@ -325,17 +270,10 @@ section.input-panel fieldset button.btn-ok {
 
 section.input-panel fieldset button.btn-ok:hover {
             /* Make --color-ok 20% darker. */
-            background-color: color-mix(in srgb, var(--teal-7), black 20%);
+            background-color: color-mix(in srgb, var(--color-ok), black 20%);
             box-shadow: var(--shadow-3);
             cursor: pointer;
         }
-
-
-@supports (color: color-mix(in lch, red, blue)) and (top: var(--f)) {
-section.input-panel fieldset button.btn-ok:hover {
-            background-color: color-mix(in srgb, var(--color-ok), black 20%);
-        }
-}
 
 
 @container sidebar (min-width: 700px) {
@@ -382,11 +320,29 @@ body {
     background-color: var(--green-7);
 }
 
+
+/* --md-n-below */
+
+
+/* @media (width < 768px) { */
+
+
+/* @custom-media --md-n-belowr  (width < 768px); */
+
+
 @media (max-width: 767px) {   
     body {
         background-color: var(--red-7);
     }
 }
+
+
+.wrapper {
+    max-width: 1080px;
+    margin: 0 auto;
+    border: 1px solid blue;
+}
+
 
 @media (prefers-color-scheme: dark) {
 
@@ -396,4 +352,3 @@ body {
         --shadow-strength: 25%;
     }
 }
-

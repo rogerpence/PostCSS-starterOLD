@@ -4,7 +4,7 @@ const postcssCustomMedia = require("postcss-custom-media");
 const postcssGlobalData = require("@csstools/postcss-global-data");
 const postcssImport = require("postcss-import");
 const postcssJitProps = require("postcss-jit-props");
-const postcssPresetEnv = require("postcss-preset-env");
+const postcssNesting = require("postcss-nesting");
 
 module.exports = {
   plugins: [
@@ -16,14 +16,8 @@ module.exports = {
       preserve: false,
     }),
     postcssJitProps(openProps),
-    postcssPresetEnv({
-      features: {
-        "nesting-rules": true,
-        "custom-media-queries": false,
-      },
-    }),
+    postcssNesting(),
 
-    // ,
-    // cssnano(),
+    //cssnano(),
   ],
 };
